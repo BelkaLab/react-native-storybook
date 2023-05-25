@@ -1,9 +1,9 @@
-import { Button } from "./button";
+import { Button } from './button';
 
 export default {
-  title: "Button",
+  title: 'Button',
   component: Button,
-  argTypes: {},
+  argTypes: {}
 };
 
 export const Template = ({ args }) => {
