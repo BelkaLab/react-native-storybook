@@ -7,5 +7,14 @@ export default {
 };
 
 export const Default = {
-  args: {}
+  args: {
+    placeholder: 'Placeholder'
+  }
+};
+
+export const WithLabel = {
+  args: {
+    placeholder: 'Placeholder',
+    label: 'Input label'
+  }
 };
