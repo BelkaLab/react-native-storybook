@@ -47,8 +47,7 @@ try {
 
 const getStories = () => {
   return {
-    "./components/button.stories.jsx": require("../components/button.stories.jsx"),
-    "./components/button/button.stories.jsx": require("../components/button/button.stories.tsx"),
+    "./components/button/button.stories.tsx": require("../components/button/button.stories.tsx"),
   };
 };
 
