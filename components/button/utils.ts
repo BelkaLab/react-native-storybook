@@ -11,7 +11,7 @@ export function retrieveButtonColor(variant?: ButtonVariant): Colors {
     case 'secondary':
       return {
         backgroundColor: '#709cef',
-        textColor: '#0050e6'
+        textColor: 'white'
       };
     case 'text':
       return {
