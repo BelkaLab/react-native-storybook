@@ -1,12 +1,12 @@
-import { View } from "react-native";
+import { View } from 'react-native';
 
 export const parameters = {
   controls: {
     matchers: {
       color: /(background|color)$/i,
-      date: /Date$/,
-    },
-  },
+      date: /Date$/
+    }
+  }
 };
 
 export const decorators = [
@@ -14,11 +14,11 @@ export const decorators = [
     <View
       style={{
         flex: 1,
-        backgroundColor: "#26c6da",
-        padding: 8,
+        backgroundColor: '#fffff',
+        padding: 16
       }}
     >
       <Story />
     </View>
-  ),
+  )
 ];
