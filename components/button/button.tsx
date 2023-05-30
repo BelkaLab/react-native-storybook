@@ -26,9 +26,6 @@ export const Button = ({ variant, disabled, style, onPress }: ButtonProps): JSX.
     [style, disabled]
   );
 
-  console.log('disabled', disabled);
-
-
   return (
     <Pressable
       backgroundColor={backgroundColor}
