@@ -1,14 +1,19 @@
-import { Text as RNText } from 'react-native';
+import { StyleProp, Text as RNText, TextStyle } from 'react-native';
 import styled from 'styled-components/native';
 import { TextOrientation } from './types';
 
 interface TitleProps {
   text: string;
   orientation: TextOrientation;
+  style?: StyleProp<TextStyle>;
 }
 
-export const Title = ({ text, orientation }: TitleProps): JSX.Element => {
-  return <Text orientation={orientation}>{text}</Text>;
+export const Title = ({ text, orientation, style }: TitleProps): JSX.Element => {
+  return (
+    <Text orientation={orientation} style={style}>
+      {text}
+    </Text>
+  );
 };
 
 const Text = styled(RNText)<{ orientation: TextOrientation }>`

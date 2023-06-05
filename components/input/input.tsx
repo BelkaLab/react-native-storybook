@@ -1,20 +1,20 @@
-import { Text, TextInput as RNTextInput } from 'react-native';
-import { useState } from 'react';
+import { StyleProp, Text, TextInput as RNTextInput, TextInputProps, View, ViewStyle } from 'react-native';
 import styled from 'styled-components/native';
 
-interface InputProps {
+interface InputProps extends TextInputProps {
   placeholder: string;
   label?: string;
+  value?: string;
+  onChangeText?: (value: string) => void;
+  style?: StyleProp<ViewStyle>;
 }
 
-export const Input = ({ placeholder, label }: InputProps): JSX.Element => {
-  const [text, setText] = useState('');
-
+export const Input = ({ placeholder, label, value, onChangeText, style }: InputProps): JSX.Element => {
   return (
-    <>
+    <View style={style}>
       {label && <Label>{label}</Label>}
-      <TextInput value={text} onChangeText={setText} placeholder={placeholder} />
-    </>
+      <TextInput value={value} onChangeText={onChangeText} placeholder={placeholder} />
+    </View>
   );
 };
 
