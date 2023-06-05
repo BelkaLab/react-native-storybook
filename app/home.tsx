@@ -14,11 +14,17 @@ const Home = (): JSX.Element => {
     setInputValue('');
   };
 
+  const onResetPress = () => {
+    setToDos([]);
+  };
+
   return (
     <Container>
       <StyledTitle text={'To do app'} orientation={'center'} />
       <StyledInput placeholder={'Your todo'} value={inputValue} onChangeText={setInputValue} />
       <StyledButton text={'Enter'} variant={'primary'} onPress={onButtonPress} disabled={!inputValue} />
+      {/*TODO: move reset button at the end of the list or page*/}
+      <StyledButton text={'Reset'} variant={'text'} onPress={onResetPress} disabled={toDos.length === 0} />
       {toDos.map((elem, index) => (
         <Text key={index}>{elem}</Text>
       ))}
