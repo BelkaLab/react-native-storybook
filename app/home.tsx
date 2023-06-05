@@ -16,11 +16,11 @@ const Home = (): JSX.Element => {
 
   return (
     <Container>
-      <Title text={'To do app'} orientation={'center'} />
-      <Input placeholder={'Your todo'} value={inputValue} onChangeText={setInputValue} />
-      <Button text={'Enter'} variant={'primary'} onPress={onButtonPress} disabled={!inputValue} />
-      {toDos.map((elem) => (
-        <Text>{elem}</Text>
+      <StyledTitle text={'To do app'} orientation={'center'} />
+      <StyledInput placeholder={'Your todo'} value={inputValue} onChangeText={setInputValue} />
+      <StyledButton text={'Enter'} variant={'primary'} onPress={onButtonPress} disabled={!inputValue} />
+      {toDos.map((elem, index) => (
+        <Text key={index}>{elem}</Text>
       ))}
     </Container>
   );
@@ -28,6 +28,19 @@ const Home = (): JSX.Element => {
 
 const Container = styled(SafeAreaView)`
   flex: 1;
+  margin: 16px;
+`;
+
+const StyledTitle = styled(Title)`
+  margin-top: 32px;
+`;
+
+const StyledInput = styled(Input)`
+  margin-top: 16px;
+`;
+
+const StyledButton = styled(Button)`
+  margin-top: 16px;
 `;
 
 export default Home;

@@ -1,4 +1,4 @@
-import { Text, TextInput as RNTextInput, TextInputProps } from 'react-native';
+import { StyleProp, Text, TextInput as RNTextInput, TextInputProps, View, ViewStyle } from 'react-native';
 import styled from 'styled-components/native';
 
 interface InputProps extends TextInputProps {
@@ -6,14 +6,15 @@ interface InputProps extends TextInputProps {
   label?: string;
   value?: string;
   onChangeText?: (value: string) => void;
+  style?: StyleProp<ViewStyle>;
 }
 
-export const Input = ({ placeholder, label, value, onChangeText }: InputProps): JSX.Element => {
+export const Input = ({ placeholder, label, value, onChangeText, style }: InputProps): JSX.Element => {
   return (
-    <>
+    <View style={style}>
       {label && <Label>{label}</Label>}
       <TextInput value={value} onChangeText={onChangeText} placeholder={placeholder} />
-    </>
+    </View>
   );
 };
 
