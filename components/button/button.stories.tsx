@@ -7,6 +7,7 @@ export default {
   title: 'Button',
   component: Button,
   args: {
+    text: 'Button',
     variant: 'primary',
     disabled: true,
     onPress: () => console.log('pressed')
