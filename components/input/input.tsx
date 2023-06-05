@@ -1,4 +1,4 @@
-import { Text, TextInput as RNTextInput } from 'react-native';
+import { StyleSheet, Text, TextInput as RNTextInput } from 'react-native';
 import { useState } from 'react';
 
 interface InputProps {
