@@ -16,11 +16,11 @@ export default {
       control: {
         type: 'radio'
       },
-      options: BUTTON_VARIANT,
+      options: BUTTON_VARIANT
     }
-  },
+  }
 } as ComponentMeta<typeof Button>;
 
 export const Template: ComponentStory<typeof Button> = (args) => {
-  return <Button {...args}></Button>;
+  return <Button {...args} />;
 };
