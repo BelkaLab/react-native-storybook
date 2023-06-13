@@ -3,7 +3,8 @@ import styled from 'styled-components/native';
 import { Title } from '../components/title';
 import { Input } from '../components/input';
 import { Button } from '../components/button';
-import { SafeAreaView, Text } from 'react-native';
+import { SafeAreaView } from 'react-native';
+import { Item } from '../components/item';
 
 const Home = (): JSX.Element => {
   const [inputValue, setInputValue] = useState('');
@@ -26,7 +27,7 @@ const Home = (): JSX.Element => {
       {/*TODO: move reset button at the end of the list or page*/}
       <StyledButton text={'Reset'} variant={'text'} onPress={onResetPress} disabled={toDos.length === 0} />
       {toDos.map((elem, index) => (
-        <Text key={index}>{elem}</Text>
+        <Item key={index} text={elem} />
       ))}
     </Container>
   );
