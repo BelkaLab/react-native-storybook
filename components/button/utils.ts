@@ -1,4 +1,4 @@
-import { ButtonVariant, Colors } from '.';
+import { ButtonVariant, Colors } from './types';
 
 export function retrieveButtonColor(variant?: ButtonVariant): Colors {
   switch (variant) {
