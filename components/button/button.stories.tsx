@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from './button';
 import { ComponentMeta, ComponentStory } from '@storybook/react-native';
-import { BUTTON_VARIANT } from './types';
+import { BUTTON_VARIANTS } from './types';
 
 export default {
   title: 'Button',
@@ -17,7 +17,7 @@ export default {
       control: {
         type: 'radio'
       },
-      options: BUTTON_VARIANT
+      options: BUTTON_VARIANTS
     }
   }
 } as ComponentMeta<typeof Button>;

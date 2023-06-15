@@ -20,13 +20,13 @@ interface ButtonProps {
 
 export const Button = ({ text, variant, disabled, style, onPress }: ButtonProps): JSX.Element => {
   const { backgroundColor, textColor } = retrieveButtonColor(variant);
-  const _style = useCallback(
+  const mergedStyle = useCallback(
     ({ pressed }: PressableStateCallbackType) => [{ opacity: pressed || disabled ? 0.5 : 1 }, style && style],
     [style, disabled]
   );
 
   return (
-    <Pressable backgroundColor={backgroundColor} disabled={disabled} style={_style} onPress={onPress}>
+    <Pressable backgroundColor={backgroundColor} disabled={disabled} style={mergedStyle} onPress={onPress}>
       <Text textColor={textColor} disabled={disabled}>
         {text}
       </Text>
@@ -34,7 +34,7 @@ export const Button = ({ text, variant, disabled, style, onPress }: ButtonProps)
   );
 };
 
-const Pressable = styled(RNPressable)<{ backgroundColor: string }>`
+const Pressable = styled(RNPressable) <{ backgroundColor: string }>`
   justify-content: center;
   align-items: center;
   height: 46px;
@@ -43,7 +43,7 @@ const Pressable = styled(RNPressable)<{ backgroundColor: string }>`
   background-color: ${(props) => props.backgroundColor};
 `;
 
-const Text = styled(RNText)<{ textColor: string }>`
+const Text = styled(RNText) <{ textColor: string }>`
   color: ${(props) => props.textColor};
   font-size: 18px;
 `;
