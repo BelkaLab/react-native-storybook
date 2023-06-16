@@ -26,9 +26,11 @@ const Home = (): JSX.Element => {
       <StyledButton text={'Enter'} variant={'primary'} onPress={onButtonPress} disabled={!inputValue} />
       {/*TODO: move reset button at the end of the list or page*/}
       <StyledButton text={'Reset'} variant={'text'} onPress={onResetPress} disabled={toDos.length === 0} />
-      {toDos.map((elem, index) => (
-        <Item key={index} text={elem} />
-      ))}
+      <ScrollView>
+        {toDos.map((elem, index) => (
+          <Item key={index} text={elem} />
+        ))}
+      </ScrollView>
     </Container>
   );
 };
@@ -48,6 +50,10 @@ const StyledInput = styled(Input)`
 
 const StyledButton = styled(Button)`
   margin-top: 16px;
+`;
+
+const ScrollView = styled.ScrollView`
+  flex: 1;
 `;
 
 export default Home;
